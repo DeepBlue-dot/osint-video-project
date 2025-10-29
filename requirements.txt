@@ -1,0 +1,43 @@
+# Core
+numpy
+opencv-python
+pandas
+
+# YouTube video ingestion
+yt-dlp
+
+# Audio processing
+ffmpeg-python
+pydub
+
+# Speech-to-text (for later phases)
+openai-whisper
+torch
+
+# OCR and image processing (for later phases)
+pytesseract
+Pillow
+
+# Face recognition and embeddings
+deepface
+faiss-cpu
+
+# Machine learning utilities
+scikit-learn
+
+# Database and data management
+sqlalchemy
+
+# Visualization and dashboard
+streamlit
+plotly
+networkx
+pyvis
+
+# JSON schema validation
+jsonschema
+pyyaml
+
+# Utilities and helpers
+tqdm
+requests
