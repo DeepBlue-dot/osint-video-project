@@ -21,13 +21,17 @@ def init_directories(video_id: str):
     frames_dir = os.path.join(DATA_DIR, "frames", video_id)
     faces_dir = os.path.join(DATA_DIR, "faces", video_id)
     outputs_dir = os.path.join(DATA_DIR, "outputs", video_id)
+    AUDIO_PATH = os.path.join(DATA_DIR, "audio", f"{video_id}_audio.wav")
+    TRANSCRIPT_PATH = os.path.join(DATA_DIR, "transcripts", f"{video_id}_transcript.json")
 
     os.makedirs(raw_dir, exist_ok=True)
     os.makedirs(frames_dir, exist_ok=True)
     os.makedirs(faces_dir, exist_ok=True)
     os.makedirs(outputs_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(AUDIO_PATH), exist_ok=True)
+    os.makedirs(os.path.dirname(TRANSCRIPT_PATH), exist_ok=True)
 
     print(f"✅ Initialized directories for video ID: {video_id}")
     print(f"📂 Raw video folder: {raw_dir}")
 
-    return raw_dir, frames_dir, faces_dir, outputs_dir
+    return raw_dir, frames_dir, faces_dir, outputs_dir, AUDIO_PATH, TRANSCRIPT_PATH
