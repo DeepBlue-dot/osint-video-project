@@ -7,6 +7,7 @@ from video_pipeline.frame_extractor import extract_frames
 from video_pipeline.face_detector import detect_faces
 from audio_pipeline.audio_extractor import extract_audio
 from audio_pipeline.speech_to_text import transcribe_audio
+from video_pipeline.object_detector import detect_objects
 
 
 def process_video(url: str):
@@ -20,9 +21,11 @@ def process_video(url: str):
 
     extract_frames(video_path, frames_dir, frame_rate=1)
 
+    # 🧩 NEW: Object detection
+    detect_objects(frames_dir, outputs_dir, video_id)
+
     detect_faces(frames_dir, outputs_dir, faces_dir, video_id)
 
-    # 4. Extract audio + transcribe
     extract_audio(video_path, AUDIO_PATH)
     transcribe_audio(AUDIO_PATH, TRANSCRIPT_PATH)
 
